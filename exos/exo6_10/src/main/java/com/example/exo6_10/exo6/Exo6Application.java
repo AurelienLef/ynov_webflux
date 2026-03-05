@@ -1,4 +1,4 @@
-package com.example.exo6_10;
+package com.example.exo6_10.exo6;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +11,7 @@ import java.util.stream.IntStream;
 
 @SpringBootApplication
 @RestController
-public class Exo6_10Application {
+public class Exo6Application {
 
 	@GetMapping("/api/processed-numbers")
 	public List<String> getProcessedNumbers() {
@@ -23,6 +23,6 @@ public class Exo6_10Application {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(Exo6_10Application.class, args);
+		SpringApplication.run(Exo6Application.class, args);
 	}
 }
