@@ -6,6 +6,4 @@ import reactor.core.publisher.Flux;
 
 public interface OrderRepository extends ReactiveCrudRepository<Order, Long> {
     Flux<Order> findAllByStatus(String etat);
-
-    Flux<Order> findAllPaged(Integer page, Integer size);
 }
