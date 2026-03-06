@@ -31,6 +31,11 @@ public class OrderController {
         return orderService.findAllByStatus(status);
     }
 
+    @GetMapping("/paged")
+    public Flux<Order> getOrdersPaged(@RequestParam int page, @RequestParam int size) {
+        return orderService.findAllPaged(page, size);
+    }
+
     @PostMapping
     public Mono<Order> createOrder(@RequestBody Order order) {
         return orderService.create(order);

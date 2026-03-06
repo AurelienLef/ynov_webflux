@@ -26,6 +26,12 @@ public class OrderService {
         return orderRepository.findAllByStatus(etat);
     }
 
+    public Flux<Order> findAllPaged(int page, int size) {
+        return orderRepository.findAll()
+                .skip((long) page * size)
+                .take(size);
+    }
+
     public Mono<Order> create(Order order) {
         order.setStatus("PENDING");
         return orderRepository.save(order);
